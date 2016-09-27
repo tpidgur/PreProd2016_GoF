@@ -1,4 +1,4 @@
-package MVC;
+package mvc;
 
 import entities.CurrencyNominal;
 import entities.DrinkForSale;
@@ -9,9 +9,6 @@ import java.util.stream.IntStream;
 /**
  * Sends commands to the model to update the model's state.
  * It can also send commands to its associated view to change the view's presentation of the model
- *
- * @author Pidhurska Tetiana
- * @version 1 (created on 25.09.16)
  */
 public class Controller {
     Model model;
@@ -108,7 +105,7 @@ public class Controller {
      * allows to give beverage and charge in case if enough money are provided
      * or to move to the "passing money" stage otherwise
      *
-     * @param banknotes - List of integer banknotes, passed by customer to the coffee machine
+     * @param banknotes  - List of integer banknotes, passed by customer to the coffee machine
      * @param beverageId - int id of the drink, chosen by the customer
      */
     public void giveBeverage(List<Integer> banknotes, int beverageId) {
@@ -122,7 +119,7 @@ public class Controller {
             model.orderDrink(beverageId);
         } else if (total > price) {
             view.printMessage(View.REQUIRED_CHANGE + (total - price));
-            view.printMessage(View.TOTAL_CHANGE +model.calculateSumOfPutMoney(model.getChange(total, price)));
+            view.printMessage(View.TOTAL_CHANGE + model.calculateSumOfPutMoney(model.getChange(total, price)));
         }
     }
 

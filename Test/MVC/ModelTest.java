@@ -1,26 +1,21 @@
-package MVC;
+package mvc;
 
-import entities.CoffeeMachine;
-import entities.CurrencyNominal;
+import entities.BeverageMachine;
 import entities.DrinkForSale;
 import org.junit.Test;
 
 import java.util.Arrays;
-import java.util.Currency;
 import java.util.List;
 
 import static org.junit.Assert.*;
 
-/**
- * Created by Tetiana_Pidhurska on 9/26/2016.
- */
+
 public class ModelTest {
     Model model;
-    Controller controller;
+
 
     {
         model = new Model();
-        controller = new Controller(model, new View());
     }
 
 
@@ -33,10 +28,9 @@ public class ModelTest {
     public void orderDrinkTest() {
         model.orderDrink(5);
         DrinkForSale drink = model.getDrinkMapOnId(5).getKey();
-        int amount = CoffeeMachine.getDrinksAmount().get(drink);
+        int amount = BeverageMachine.getDrinksAmount().get(drink);
         assertEquals(9, amount);
     }
-
 
 
     /**
@@ -47,15 +41,13 @@ public class ModelTest {
         String name = model.getDrinkName(5);
         assertEquals("ORANGE", name);
     }
-    /**
-     * Tests if change is given correctly:
-     * starting from the largest banknote and up to the lowest, until the banknotes are available
-     */
+
     @Test
     public void getChangeTest() {
         List<Integer>  actual= model.getChange(550, 35);
         List<Integer> expected= Arrays.asList(new Integer[]{50,50,50,50,50,50,50,50,50,50,10,5});
         assertEquals(expected,actual );
+
     }
 
 }

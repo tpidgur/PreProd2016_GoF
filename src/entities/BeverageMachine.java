@@ -4,11 +4,8 @@ import java.util.*;
 
 /**
  * Class with initial amount of drinks and banknotes
- *
- * @author Pidhurska Tetiana
- * @version 1 (created on 25.09.16)
  */
-public class CoffeeMachine {
+public class BeverageMachine {
     /**
      * map with key=DrinkForSale, value=available amount of drinks
      */
@@ -42,6 +39,7 @@ public class CoffeeMachine {
             } else drinksAmount.put(drink, 10);
         }
     }
+
     /**
      * fill currencyAmount collection with initial amount of drinks of corresponding type
      */

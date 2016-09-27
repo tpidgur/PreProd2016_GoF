@@ -1,10 +1,7 @@
-package MVC;
+package mvc;
 
 /**
  * Starting point of the program
- *
- * @author Pidhurska Tetiana
- * @version 1 (created on 25.09.16)
  */
 public class Main {
     public static void main(String[] args) {
@@ -14,5 +11,5 @@ public class Main {
         Controller controller = new Controller(model, view);
         // Run
         controller.processUser();
-}
+    }
 }

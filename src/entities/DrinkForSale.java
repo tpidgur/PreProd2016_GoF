@@ -2,27 +2,24 @@ package entities;
 
 /**
  * Class containing data about type of beverage, id, price
- *
- * @author Pidhurska Tetiana
- * @version 1 (created on 25.09.16)
  */
 public class DrinkForSale {
     private int id;
-    private static int counter=1;
+    private static int counter = 1;
     private Beverage type;
     private int price;
 
     public DrinkForSale(Beverage type) {
         this.type = type;
-        this.price =  type.getPrice();
-        id=counter++;
+        this.price = type.getPrice();
+        id = counter++;
     }
 
-    public  int getId() {
+    public int getId() {
         return id;
     }
 
-    public  void setId(int id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -48,7 +45,7 @@ public class DrinkForSale {
 
     @Override
     public String toString() {
-        return  type.toString()+"(id"+getId()+",price="+type.getPrice()+")";
+        return type.toString() + "(id" + getId() + ",price=" + type.getPrice() + ")";
     }
 
     @Override

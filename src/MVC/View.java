@@ -1,10 +1,7 @@
-package MVC;
+package mvc;
 
 /**
  * A view generates an output presentation to the user based on changes in the model.
- *
- * @author Pidhurska Tetiana
- * @version 1 (created on 25.09.16)
  */
 public class View {
     public static final String SELECT_BEVERAGE = "\nSelect beverage from a list (enter the id number of the beverage):\n";
@@ -27,7 +24,7 @@ public class View {
     public static final String TOTAL_CHANGE = "The total change makes up: \n";
 
 
-    public  void printMessage(String message) {
+    public void printMessage(String message) {
         System.out.println(message);
     }
 }

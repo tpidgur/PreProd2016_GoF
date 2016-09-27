@@ -2,9 +2,6 @@ package entities;
 
 /**
  * Class with names of beberages and corresponding prices
- *
- * @author Pidhurska Tetiana
- * @version 1 (created on 25.09.16)
  */
 public enum Beverage {
     LATE(10),
