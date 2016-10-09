@@ -8,10 +8,12 @@ import org.junit.Test;
 import java.util.Arrays;
 import java.util.List;
 
+import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
 
 
 public class ModelTest {
+    public static final int COFFEE = 5;
     Model model;
 
     @Before
@@ -20,17 +22,21 @@ public class ModelTest {
     }
 
 
-    /**
-     * Tests if  applying  the orderDrink() the available amount of drink  (let say with id 5)
-     * decreases the total amount of remaining drinks by 1.
-     * Assume, that there are 10 initially items of each type
-     */
     @Test
     public void orderDrinkTest() {
-        model.orderDrink(5);
-        DrinkForSale drink = model.getDrinkMapOnId(5).getKey();
-        int amount = BeverageMachine.getDrinksAmount().get(drink);
-        assertEquals(9, amount);
+        DrinkForSale drink = getDrink(COFFEE);
+        int initialDrinksAmount = getRemainingDrinks(drink);
+        model.orderDrink(COFFEE);
+        assertThat(getRemainingDrinks(drink), is(initialDrinksAmount - 1));
+
+    }
+
+    private Integer getRemainingDrinks(DrinkForSale drink) {
+        return BeverageMachine.getDrinksAmount().get(drink);
+    }
+
+    private DrinkForSale getDrink(int drinkId) {
+        return model.getDrinkMapOnId(drinkId).getKey();
     }
 
 
