@@ -2,6 +2,7 @@ package mvc;
 
 import entities.BeverageMachine;
 import entities.DrinkForSale;
+import org.junit.Before;
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -13,8 +14,8 @@ import static org.junit.Assert.*;
 public class ModelTest {
     Model model;
 
-
-    {
+    @Before
+    public void initializeModel() {
         model = new Model();
     }
 
@@ -44,9 +45,9 @@ public class ModelTest {
 
     @Test
     public void getChangeTest() {
-        List<Integer>  actual= model.getChange(550, 35);
-        List<Integer> expected= Arrays.asList(50,50,50,50,50,50,50,50,50,50,10,5);
-        assertEquals(expected,actual );
+        List<Integer> actual = model.getChange(550, 35);
+        List<Integer> expected = Arrays.asList(50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 10, 5);
+        assertEquals(expected, actual);
 
     }
 
