@@ -1,0 +1,13 @@
+
+.idea/*
+.idea/.name
+.idea/compiler.xml
+.idea/copyright/
+.idea/libraries/
+.idea/misc.xml
+.idea/modules.xml
+.idea/uiDesigner.xml
+.idea/workspace.xml
+PreProd2016_GoF.iml
+target/
+out/
