@@ -45,7 +45,7 @@ public class ModelTest {
     @Test
     public void getChangeTest() {
         List<Integer>  actual= model.getChange(550, 35);
-        List<Integer> expected= Arrays.asList(new Integer[]{50,50,50,50,50,50,50,50,50,50,10,5});
+        List<Integer> expected= Arrays.asList(50,50,50,50,50,50,50,50,50,50,10,5);
         assertEquals(expected,actual );
 
     }
